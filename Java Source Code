@@ -1,0 +1,64 @@
+/*
+* File: ADombrowskiHW1a.java
+* Author: Anthony Dombrowski
+* Date: October 26, 2015
+* Purpose: Calculates and displays results of addition, subtraction,
+* multiplication, division, modulus, bitwise &, or bitwise | on two integers.
+*/
+
+import java.util.Scanner;
+
+public class ADombrowskiHW1a	{
+	public static void main(String[] args)	{
+		int firstInt = 0;
+		int secondInt = 0;
+		int ans = 0;
+		char op;
+
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Welcome to Simple Calculator!");
+		System.out.println("I can do addition, subtraction, multiplication, " + 
+							"division, modulus, bitwise &, or bitwise | " + 
+							"on two integers.");
+
+		System.out.print("Enter the first integer: ");
+		firstInt = input.nextInt();
+
+		System.out.print("Enter the operation (+, -, *, /, %, &, or |): ");
+		op = input.next().charAt(0);
+
+		System.out.print("Enter the second integer: ");
+		secondInt = input.nextInt();
+
+		switch (op)	{
+			case '+':
+				ans = firstInt + secondInt;
+				break;
+			case '-':
+				ans = firstInt - secondInt;
+				break;
+			case '*':	case 'x':	case 'X':
+				ans = firstInt * secondInt;
+				break;
+			case '/':
+				ans = firstInt / secondInt;
+				break;
+			case '%':
+				ans = firstInt % secondInt;
+				break;
+			case '&':
+				ans = firstInt & secondInt;
+				break;
+			case '|':
+				ans = firstInt | secondInt;
+				break;
+			default:
+				System.out.println(op + " isn't a valid operator. Please " + 
+									"choose one from the options listed.");
+				System.exit(0);
+		}
+
+		System.out.println(firstInt + " " + op + " " + secondInt + " = " + ans);
+	}
+}
