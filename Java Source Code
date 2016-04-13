@@ -9,28 +9,36 @@
 import java.util.Scanner;
 
 public class ADombrowskiHW1a	{
+	// main
 	public static void main(String[] args)	{
+		// calculations performed on two operands
 		int firstInt = 0;
 		int secondInt = 0;
 		int ans = 0;
 		char op;
-
+		
+		// scanner for user input
 		Scanner input = new Scanner(System.in);
 		
+		// Welcome msg
 		System.out.println("Welcome to Simple Calculator!");
 		System.out.println("I can do addition, subtraction, multiplication, " + 
-							"division, modulus, bitwise &, or bitwise | " + 
-							"on two integers.");
+				"division, modulus, bitwise &, or bitwise | " + 
+				"on two integers.");
 
+		// first operand prompt, read in an int
 		System.out.print("Enter the first integer: ");
 		firstInt = input.nextInt();
 
+		// operator input, read input and covert to char at index 0
 		System.out.print("Enter the operation (+, -, *, /, %, &, or |): ");
 		op = input.next().charAt(0);
-
+		
+		// prompt for second operand, read int
 		System.out.print("Enter the second integer: ");
 		secondInt = input.nextInt();
 
+		// switch on the operator input
 		switch (op)	{
 			case '+':
 				ans = firstInt + secondInt;
@@ -55,10 +63,11 @@ public class ADombrowskiHW1a	{
 				break;
 			default:
 				System.out.println(op + " isn't a valid operator. Please " + 
-									"choose one from the options listed.");
+						"choose one from the options listed.");
 				System.exit(0);
 		}
 
+		// print calculation
 		System.out.println(firstInt + " " + op + " " + secondInt + " = " + ans);
-	}
-}
+	} // end main
+} // end class
